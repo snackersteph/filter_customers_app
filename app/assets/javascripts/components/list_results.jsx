@@ -6,7 +6,11 @@ class ListResults extends React.Component {
   render() {
     return (
       <div>
-        <h1>LIST RESULTS HERE</h1>
+        <ol>
+        {this.props.customers.map( (customer, index) => {
+          return <li key={index}>{customer.firstname} {customer.lastname}</li>
+        })}
+        </ol>
       </div>
     );
   }
