@@ -13,7 +13,8 @@ class App extends React.Component {
   render () {
     return (
     <div>
-      <Search />
+      <h1>Search for Customers</h1>
+      <Search companies={this.props.companies}/>
       <ListResults customers={this.props.customers} />
     </div>
   )}
