@@ -20,8 +20,16 @@ class Search extends React.Component {
               </ul>
             </div>
             <div className="input-group-btn">
-              <button type="button" className="btn btn-default">Ascending</button>
-              <button type="button" className="btn btn-default">Descending</button>
+              <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" 
+                      aria-expanded="false">Sort by<span className="caret"></span></button>
+              <ul className="dropdown-menu">
+                <li><a href="#">First Name, Descending</a></li>
+                <li><a href="#">First Name, Ascending</a></li>
+                <li><a href="#">Last Name, Descending</a></li>
+                <li><a href="#">Last Name, Ascending</a></li>
+                <li><a href="#">Company Name, Descending</a></li>
+                <li><a href="#">Company Name, Ascending</a></li>
+              </ul>
             </div>
           </div>
       </div>

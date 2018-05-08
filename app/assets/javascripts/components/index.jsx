@@ -12,7 +12,7 @@ class App extends React.Component {
 
   render () {
     return (
-    <div>
+    <div id="main-app">
       <h1>Search for Customers</h1>
       <Search companies={this.props.companies}/>
       <ListResults customers={this.props.customers} />
