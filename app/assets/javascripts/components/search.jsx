@@ -12,19 +12,16 @@ class Search extends React.Component {
     this.setState({
       current: e.target.value
     })
-    console.log(e.target.value)
     window.history.pushState(null, null, `http://0.0.0.0:3000/customers?firstname=${e.target.value}`)
     window.location.reload(null, null, `http://0.0.0.0:3000/customers?firstname=${e.target.value}`)
   }
 
   handleCompany(e) {
-    console.log(e.target.dataset.value)
     window.history.pushState(null, null, `http://0.0.0.0:3000/customers?company=${e.target.dataset.value}`)
     window.location.reload(null, null, `http://0.0.0.0:3000/customers?company=${e.target.dataset.value}`)
   }
 
   handleClick(e) {
-    console.log(e.target.dataset.value)
     window.history.pushState(null, null, `http://0.0.0.0:3000/customers?${e.target.dataset.value}`)
   }
 
