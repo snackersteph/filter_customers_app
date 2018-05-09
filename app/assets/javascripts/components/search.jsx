@@ -4,35 +4,44 @@ class Search extends React.Component {
     this.state = {
       current: ''
     }
-    this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleUpdate(e) {
+  handleSearch(e) {
     this.setState({
       current: e.target.value
     })
-    this.props.handleChange(this.state.current)
+    console.log(e.target.value)
+    window.history.pushState(null, null, `http://0.0.0.0:3000/customers?firstname=${e.target.value}`)
+    window.location.reload(null, null, `http://0.0.0.0:3000/customers?firstname=${e.target.value}`)
+  }
+
+  handleCompany(e) {
+    console.log(e.target.dataset.value)
+    window.history.pushState(null, null, `http://0.0.0.0:3000/customers?company=${e.target.dataset.value}`)
+    window.location.reload(null, null, `http://0.0.0.0:3000/customers?company=${e.target.dataset.value}`)
   }
 
   handleClick(e) {
     console.log(e.target.dataset.value)
+    window.history.pushState(null, null, `http://0.0.0.0:3000/customers?${e.target.dataset.value}`)
   }
 
   render() {
     return (
       <div>
           <div className="input-group">
-            <input type="text" className="form-control" aria-label="..." value={this.state.current} onChange={this.handleUpdate}/>
+            <input type="text" className="form-control" aria-label="..." value={this.state.current} onChange={this.handleSearch} />
             <div className="input-group-btn">
               <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" 
                       aria-expanded="false">Company<span className="caret"></span></button>
               <ul className="dropdown-menu">
                 {this.props.companies.map( (company, index) => {
-                  return <li key={index}><a data-value={company.title} onClick={this.handleClick}>{company.title}</a></li>
+                  return <li key={index}><a data-value={company.title} onClick={this.handleCompany}>{company.title}</a></li>
                 })}
                 <li role="separator" className="divider"></li>
-                <li><a href="#">All Companies</a></li>
+                <li><a data-value={''} onClick={this.handleCompany}>All Companies</a></li>
               </ul>
             </div>
             <div className="input-group-btn">
