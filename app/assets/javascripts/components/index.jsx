@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -14,17 +17,18 @@ class App extends React.Component {
   }
 
   handleChange(event){
-    results = get_filtered_results(event)
-    this.setState({
-      searchQuery: results,
-    });
+    if (this.state.searchQuery == event){
+      //query didnt change
+      return false;
+    }
+    this.props.history.replace(`/customers?firstname='${event.target.value}&lastname=${event.target.value}`);
   }
 
   render () {
     return (
     <div id="main-app">
       <h1>Search for Customers</h1>
-      <Search companies={this.props.companies} getResults={this.handleChange}/>
+      <Search companies={this.props.companies} handleChange={this.handleChange}/>
       <ListResults customers={this.state.customers} />
     </div>
   )}
