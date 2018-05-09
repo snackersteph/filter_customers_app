@@ -1,13 +1,27 @@
 class Search extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      current: ''
+    }
+    this.handleUpdate = this.handleUpdate.bind(this);
+  }
+
+  handleUpdate(e) {
+    this.setState({
+      current: e.target.value
+    })
+    console.log(this.props.getResults('hi'))
+    // .then(() => {
+    //   this.props.getResults(this.state.current)
+    // })
   }
 
   render() {
     return (
       <div>
           <div className="input-group">
-            <input type="text" className="form-control" aria-label="..." />
+            <input type="text" className="form-control" aria-label="..." value={this.state.current} onChange={this.handleUpdate}/>
             <div className="input-group-btn">
               <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" 
                       aria-expanded="false">Company<span className="caret"></span></button>

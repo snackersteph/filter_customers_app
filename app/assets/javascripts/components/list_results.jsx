@@ -2,10 +2,6 @@ class ListResults extends React.Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount(){
-    // console.log("all the customers")
-    // console.log(this.props.customers)
-  }
 
   render() {
     return (
