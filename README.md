@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby version: ruby 2.5.1p111
 
-Things you may want to cover:
+## System dependencies
+* ruby
+* bundler (1.16.1)
+* sqlite3
 
-* Ruby version
+## Setup
+* bundle install
+* rake db:create
 
-* System dependencies
+## How to run the test suite
+* Controller Tests: rails test
 
-* Configuration
+## Generate data
+rails db:migrate
+rails db:seed
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Trying it out
+* start the server: bundle exec rails s
+* navigate to the home page: http://localhost:3000
