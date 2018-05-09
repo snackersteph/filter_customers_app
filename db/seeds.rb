@@ -8,16 +8,21 @@
 
 Faker::UniqueGenerator.clear
 
+companies = 10.times.map do
+  Company.create(title: Faker::Company.unique.name)
+end
+
+# puts companies
+
 50.times do
   Customer.create(
-    :firstname => Faker::Name.unique.first_name,
-    :lastname => Faker::Name.unique.last_name,
-    :company_id => Faker::Number.between(1, 10)
+    firstname: Faker::Name.unique.first_name,
+    lastname: Faker::Name.unique.last_name,
+    company: companies.sample # grab a random company
   )
 end
 
-10.times do
-  Company.create(
-    :title => Faker::Company.unique.name
-  )
-end
+
+
+
+

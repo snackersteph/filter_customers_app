@@ -3,6 +3,9 @@ class CreateCustomers < ActiveRecord::Migration[5.2]
     create_table :customers do |t|
       t.string :firstname
       t.string :lastname
+      t.string :company
+
+      t.timestamps
     end
   end
 end

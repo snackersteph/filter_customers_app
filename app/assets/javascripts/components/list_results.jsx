@@ -2,6 +2,10 @@ class ListResults extends React.Component {
   constructor(props) {
     super(props);
   }
+  componentDidMount(){
+    // console.log("all the customers")
+    console.log(this.props.customers)
+  }
 
   render() {
     return (
@@ -22,7 +26,7 @@ class ListResults extends React.Component {
                         <td>{index + 1}</td>
                         <td>{customer.firstname}</td>
                         <td>{customer.lastname}</td>
-                        <td>company title</td>
+                        <td>{customer.company}</td>
                       </tr>
               })}
             </tbody>
