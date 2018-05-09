@@ -2,6 +2,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
+      searchQuery: '',
+      customers: this.props.customers
     }  
   }
 
@@ -15,7 +17,7 @@ class App extends React.Component {
     <div id="main-app">
       <h1>Search for Customers</h1>
       <Search companies={this.props.companies}/>
-      <ListResults customers={this.props.customers} />
+      <ListResults customers={this.state.customers} />
     </div>
   )}
 }

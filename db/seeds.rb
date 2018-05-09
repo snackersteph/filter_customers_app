@@ -8,11 +8,13 @@
 
 Faker::UniqueGenerator.clear
 
-companies = 10.times.map do
-  Company.create(title: Faker::Company.unique.name)
-end
+companies = []
 
-# puts companies
+10.times do
+  newCompany = Faker::Company.unique.name
+  Company.create(title: newCompany)
+  companies.push(newCompany)
+end
 
 50.times do
   Customer.create(

@@ -4,7 +4,7 @@ class ListResults extends React.Component {
   }
   componentDidMount(){
     // console.log("all the customers")
-    console.log(this.props.customers)
+    // console.log(this.props.customers)
   }
 
   render() {
