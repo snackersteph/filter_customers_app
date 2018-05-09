@@ -11,7 +11,10 @@ class Search extends React.Component {
     this.setState({
       current: e.target.value
     })
-    console.log(this.props.getResults('hi'))
+    console.log(this.state.current)
+
+    console.log(this.props.handleChange)
+    this.props.handleChange(this.state.current)
     // .then(() => {
     //   this.props.getResults(this.state.current)
     // })
