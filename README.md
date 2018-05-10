@@ -23,4 +23,4 @@ rails db:seed
 
 ## Trying it out
 * start the server: rails s -b 0.0.0.0
-* navigate to the home page: http://localhost:3000
+* navigate to the home page: 0.0.0.0:3000
